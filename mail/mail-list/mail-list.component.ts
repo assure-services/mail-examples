@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { fuseAnimations } from '@fuse/animations';
+import { appAnimations } from '@app/animations';
 
 import { Mail } from 'app/main/apps/mail/mail.model';
 import { MailService } from 'app/main/apps/mail/mail.service';
@@ -14,7 +14,7 @@ import { MailService } from 'app/main/apps/mail/mail.service';
     templateUrl  : './mail-list.component.html',
     styleUrls    : ['./mail-list.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    animations   : fuseAnimations
+    animations   : appAnimations
 })
 export class MailListComponent implements OnInit, OnDestroy
 {

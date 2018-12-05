@@ -3,8 +3,8 @@ import { FormControl } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 
-import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
-import { FuseTranslationLoaderService } from '@fuse/services/translation-loader.service';
+import { AppSidebarService } from '@app/components/sidebar/sidebar.service';
+import { AppTranslationLoaderService } from '@app/services/translation-loader.service';
 
 import { Mail } from 'app/main/apps/mail/mail.model';
 import { MailService } from 'app/main/apps/mail/mail.service';
@@ -35,17 +35,17 @@ export class MailComponent implements OnInit, OnDestroy
      * Constructor
      *
      * @param {MailService} _mailService
-     * @param {FuseSidebarService} _fuseSidebarService
-     * @param {FuseTranslationLoaderService} _fuseTranslationLoaderService
+     * @param {AppSidebarService} _appSidebarService
+     * @param {AppTranslationLoaderService} _appTranslationLoaderService
      */
     constructor(
         private _mailService: MailService,
-        private _fuseSidebarService: FuseSidebarService,
-        private _fuseTranslationLoaderService: FuseTranslationLoaderService
+        private _appSidebarService: AppSidebarService,
+        private _appTranslationLoaderService: AppTranslationLoaderService
     )
     {
         // Load the translations
-        this._fuseTranslationLoaderService.loadTranslations(english, turkish);
+        this._appTranslationLoaderService.loadTranslations(english, turkish);
 
         // Set the defaults
         this.searchInput = new FormControl('');
@@ -189,6 +189,6 @@ export class MailComponent implements OnInit, OnDestroy
      */
     toggleSidebar(name): void
     {
-        this._fuseSidebarService.getSidebar(name).toggleOpen();
+        this._appSidebarService.getSidebar(name).toggleOpen();
     }
 }

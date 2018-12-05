@@ -3,10 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import {
     MatButtonModule, MatCheckboxModule, MatDialogModule, MatFormFieldModule, MatIconModule, MatInputModule, MatMenuModule, MatRippleModule, MatSelectModule, MatToolbarModule
 } from '@angular/material';
-import { TranslateModule } from '@ngx-translate/core';
-
-import { FuseSharedModule } from '@fuse/shared.module';
-import { FuseSidebarModule } from '@fuse/components';
 
 import * as fromGuards from 'app/main/apps/mail-ngrx/store/guards/index';
 import { MailNgrxStoreModule } from 'app/main/apps/mail-ngrx/store/store.module';
@@ -77,12 +73,6 @@ const routes: Routes = [
         MatRippleModule,
         MatSelectModule,
         MatToolbarModule,
-
-        TranslateModule,
-
-        FuseSharedModule,
-        FuseSidebarModule,
-
         MailNgrxStoreModule
     ],
     providers      : [

@@ -5,8 +5,8 @@ import {
 } from '@angular/material';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { FuseSharedModule } from '@fuse/shared.module';
-import { FuseSidebarModule } from '@fuse/components';
+import { AppSharedModule } from '@app/shared.module';
+import { AppSidebarModule } from '@app/components';
 
 import { MailService } from 'app/main/apps/mail/mail.service';
 import { MailComponent } from 'app/main/apps/mail/mail.component';
@@ -90,8 +90,8 @@ const routes: Routes = [
 
         TranslateModule,
 
-        FuseSharedModule,
-        FuseSidebarModule
+        AppSharedModule,
+        AppSidebarModule
     ],
     providers      : [
         MailService
